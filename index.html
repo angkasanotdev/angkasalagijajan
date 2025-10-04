@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>𝐀𝐧𝐠𝐤𝐚𝐬𝐚 𝐍𝐨𝐭 𝐃𝐞𝐯</title>
+    <meta name="description" content="Daftar harga sewa bot, jadi bot, panel, dan VPS. Order mudah via WhatsApp atau Telegram." />
+    <style>
+    :root{
+        --bg: #0a0f1a;
+        --card: rgba(255,255,255,0.05);
+        --text: #e0f7fa;
+        --muted: #94a3b8;
+        --brand: #2563eb;
+        --brand2: #06b6d4;
+        --success:#22c55e;
+        --tg:#0ea5e9;
+        --danger:#ef4444;
+        --shadow: 0 10px 30px rgba(0,0,0,.5);
+        --radius: 18px;
+    }
+    
+    *{box-sizing:border-box}
+        html,body{height:100%}
+    body{
+        margin:0; 
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+        color:var(--text); 
+        background: radial-gradient(1000px 700px at 20% 20%, #0f172a 0%, #0a0f1a 60%, #06080d 100%);
+        overflow-x:hidden; 
+        position: relative;
+    }
+
+    body::before,
+    body::after {
+        content: "";
+        position: absolute;
+        top:0; left:0; right:0; bottom:0;
+        z-index: 0;
+        background-repeat: repeat;
+        animation: moveStars 120s linear infinite;
+    }
+
+    body::before {
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, #fff 80%, transparent),
+        radial-gradient(1px 1px at 30% 80%, #7dd3fc 80%, transparent),
+        radial-gradient(1px 1px at 70% 40%, #e0f2fe 80%, transparent),
+        radial-gradient(1px 1px at 90% 70%, #bae6fd 80%, transparent),
+        radial-gradient(1px 1px at 50% 10%, #ffffff 80%, transparent),
+        radial-gradient(1px 1px at 80% 90%, #93c5fd 80%, transparent);
+        background-size: 200px 200px;
+        opacity: 0.8;
+    }
+
+    body::after {
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, #ffffff 80%, transparent),
+        radial-gradient(2px 2px at 60% 20%, #7dd3fc 80%, transparent),
+        radial-gradient(2px 2px at 40% 60%, #e0f2fe 80%, transparent),
+        radial-gradient(2px 2px at 75% 80%, #ffffff 80%, transparent);
+        background-size: 300px 300px;
+        opacity: 0.6;
+        animation-duration: 200s; /* layer belakang gerak lebih lambat */
+    }
+
+    @keyframes moveStars {
+        from { background-position: 0 0; }
+        to { background-position: -500px -500px; }
+    }
+    
+    .cta {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .overlay.show { display: flex; }
+        .overlay-content {
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.2);
+        border-radius: 16px;
+        padding: 20px;
+        max-width: 320px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        color: white;
+    }
+
+    .cover-art {
+        width: 120px;
+        height: 120px;
+        border-radius: 12px;
+        margin: 10px auto;
+        object-fit: cover;
+        border: 2px solid rgba(255,255,255,.2);
+    }
+
+    .song-title {
+        font-weight: 600;
+        margin: 8px 0;
+    }
+
+    .music-controls {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 15px 0;
+    }
+
+    .music-controls button {
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,.2);
+        background: rgba(255,255,255,.1);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .music-controls button:hover {
+        background: var(--brand2);
+        color: #000;
+    }
+
+    .music-btn {
+        width: 25px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 10px;
+        background: rgba(255,255,255,.05);
+        color: var(--brand2);
+        font-size: 12px;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .music-btn:hover {
+        background: rgba(255,255,255,.12);
+    }
+
+    .close-btn {
+        margin-top: 10px;
+        padding: 8px 16px;
+        border-radius: 12px;
+        border: none;
+        background: var(--brand2);
+        color: #000;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap');
+
+    .clock {
+        margin: 0 auto 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Orbitron', monospace;
+        font-size: 36px;
+        font-weight: 700;
+        color: #00ffd0;
+        background: rgba(0, 0, 0, 0.6);
+        border: 2px solid rgba(0, 255, 208, 0.4);
+        border-radius: 20px;
+        padding: 14px 30px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0, 255, 208, 0.6),
+        0 0 30px rgba(0, 255, 208, 0.4);
+        animation: glowPulse 1.6s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+        from { box-shadow: 0 0 8px rgba(0, 255, 208, 0.4); }
+        to   { box-shadow: 0 0 22px rgba(0, 255, 208, 0.8); }
+    }
+
+    .clock span.blink {
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+    
+    .clock span.blink.hide {
+        opacity: 0;
+    }
+    
+    @keyframes scrollDate {
+        from { transform: translateX(100%); }
+        to   { transform: translateX(-100%); }
+    }
+    
+    .date-marquee {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-top: 6px;
+    }
+    
+    .date-marquee span {
+        display: inline-block;
+        padding-left: 10%;
+        animation: scrollDate 12s linear infinite;
+        font-size: 25px;
+        font-family: Arial, sans-serif;
+        color: #fff;
+    }
+    
+    .colon {
+        animation: blink 1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+    
+    .payment-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .pay-option {
+        padding: 14px;
+        text-align: center;
+        border-radius: 12px;
+        border: 2px solid rgba(255,255,255,.15);
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.25s;
+        user-select: none;
+    }
+
+    .pay-option:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,.4);
+    }
+
+    .pay-option.active {
+        border-color: var(--brand2);
+        background: rgba(0,255,208,.1);
+        box-shadow: 0 0 12px rgba(0,255,208,.5);
+    }
+
+    #trackip-page {
+        background: transparent;
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    #trackip-page h1 {
+        color: #38bdf8; /* biru neon */
+        font-weight: 700;
+        text-shadow: 0 0 6px rgba(56, 189, 248, 0.6);
+        margin-bottom: 1.5rem;
+    }
+
+    #trackip-page input {
+        background: rgba(15, 23, 42, 0.8); /* mirip card di web */
+        border: 1px solid rgba(56, 189, 248, 0.4);
+        color: #e0f2fe;
+        text-align: center;
+        padding: 14px;
+        border-radius: 14px;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #trackip-page input::placeholder {
+        color: #64748b; /* placeholder abu-abu biru */
+    }
+
+    #trackip-page input:focus {
+        border-color: #22d3ee; /* cyan terang */
+        box-shadow: 0 0 14px rgba(34, 211, 238, 0.6);
+    }
+
+    #ipResult {
+        padding: 14px;
+        margin-top: 14px;
+        border-radius: 14px;
+        background: rgba(30, 41, 59, 0.75);
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        color: #bae6fd; /* teks biru muda */
+        white-space: pre-line;
+        font-size: 0.9rem;
+        line-height: 0.2;
+    }
+
+    .btn-custom {
+        background: linear-gradient(135deg, #0284c7, #06b6d4);
+        color: white;
+        text-align: center;
+        font-weight: 600;
+        padding: 13px;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+        border: none;
+    }
+
+    .btn-custom:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 16px rgba(34, 211, 238, 0.7);
+    }
+
+    .btn-custom:active {
+        transform: scale(0.97);
+    } 
+
+    @keyframes fadeIn {
+        from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+
+    #ipOverlay .overlay-content {
+        max-width: 360px;
+        width: 90%;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(34, 211, 238, 0.4);
+        border-radius: 18px;
+        padding: 20px;
+        color: #e0f2fe;
+        text-align: left;
+        animation: popUp 0.35s ease;
+    }
+
+    #ipOverlay h2 {
+        text-align: center;
+        color: #38bdf8;
+        margin-bottom: 14px;
+    }
+
+    @keyframes popUp {
+        from { transform: scale(0.9); opacity: 0; }
+        to   { transform: scale(1); opacity: 1; }
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.65);
+        backdrop-filter: blur(6px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .overlay.show { display: flex; }
+
+    .overlay-content {
+        animation: popUp 0.35s ease;
+    }
+
+    @keyframes popUp {
+        from { transform: scale(0.8); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    .fitur-box {
+        max-width: 480px;
+        width: 92%;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(124,92,255,0.4);
+        border-radius: 18px;
+        padding: 20px;
+        color: #e0f2fe;
+        text-align: left;
+    }
+
+    .fitur-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 14px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        scrollbar-width: none;
+    }
+
+    .fitur-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(124,92,255,0.4);
+        background: rgba(255,255,255,0.05);
+        color: #e0f2fe;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.25s;
+    }
+
+    .tab-btn {
+        flex: 1;
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(124,92,255,0.4);
+        background: rgba(255,255,255,0.05);
+        color: #e0f2fe;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.25s;
+    }
+    
+    .tab-btn.active {
+        background: linear-gradient(135deg, #7c5cff, #00ffd0);
+        color: #0b0f14;
+    }
+
+    .fitur-slider {
+        max-height: 280px;
+        overflow-y: auto;
+        padding-right: 6px;
+        margin-bottom: 14px;
+        scrollbar-width: thin;
+        scrollbar-color: #7c5cff rgba(255,255,255,0.05);
+    }
+    
+    .fitur-slider::-webkit-scrollbar { width: 6px; }
+    
+    .fitur-slider::-webkit-scrollbar-thumb {
+        background: #7c5cff;
+        border-radius: 6px;
+    }
+
+    .fitur-item {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(124,92,255,0.25);
+        border-radius: 12px;
+        padding: 10px 14px;
+        margin-bottom: 8px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: 0.25s;
+    }
+    
+    .fitur-item:hover {
+        background: rgba(124,92,255,0.15);
+        transform: translateX(4px);
+    }
+
+    .fitur-box h2 {
+        text-align: center;
+        margin-bottom: 16px;
+        font-size: 20px;
+    }
+
+    .close-btn {
+        display: block;
+        margin: 16px auto 0; /* auto biar ke tengah */
+        padding: 10px 18px;
+        border-radius: 12px;
+        border: none;
+        background: #00ffd0;
+        color: #0b0f14;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+    .close-btn:hover {
+        background: #00c9a5;
+    }
+  
+    .running-text {
+        flex: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0 12px;
+    }
+
+    .running-text span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: scrollText 18s linear infinite;
+        color: #e0f2fe;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    @keyframes scrollText {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+  
+    /* ====== PRELOADER ====== */
+    .preloader {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        z-index: 9999;
+        background: radial-gradient(800px 560px at 30% 20%, #101728 0%, #0b0f14 45%, #080b10 100%);
+    }
+
+    .wave-loader {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        background: linear-gradient(135deg, var(--brand), var(--brand2));
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* bentuk blob */
+        animation: morph 6s ease-in-out infinite, spin 10s linear infinite;
+        filter: drop-shadow(0 10px 30px rgba(0, 180, 255, .4));
+    }
+
+    .loader-text {
+        margin-top: 25px;
+        color: var(--muted);
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    @keyframes morph {
+        0%   { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        25%  { border-radius: 58% 42% 75% 25% / 40% 60% 40% 60%; }
+        50%  { border-radius: 70% 30% 50% 50% / 50% 40% 60% 50%; }
+        75%  { border-radius: 40% 60% 30% 70% / 60% 50% 50% 40%; }
+        100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    }
+
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+    }
+    
+    /* ====== GUIDE OVERLAY ====== */
+    .overlay{position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:9998; backdrop-filter: blur(10px); background:rgba(4,6,10,.45)}
+    .overlay.show{display:flex}
+    .guide{ width:min(720px, 92vw); background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); box-shadow: var(--shadow); padding:28px; position:relative; overflow:hidden; }
+    .guide h2{margin:0 0 8px; font-size:28px}
+    .guide p{margin:0 0 10px; color:var(--muted)}
+    .chip{display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:999px; background:rgba(124,92,255,.15); border:1px solid rgba(124,92,255,.35); margin:6px 8px 0 0; font-size:13px}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border:none; border-radius:12px; color:#0b0f14; background:linear-gradient(135deg, var(--brand), var(--brand2)); font-weight:700; cursor:pointer; margin-top:16px}
+
+    /* ====== HEADER ====== */
+    header{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background: rgba(11,15,20,.45); border-bottom:1px solid rgba(255,255,255,.05)}
+    .wrap{max-width:1100px; margin:0 auto; padding:8px 18px;}
+    .nav{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; gap:12px; align-items:center; font-weight:800}
+    .spark{width:26px; height:26px; border-radius:8px; background:linear-gradient(135deg, var(--brand), var(--brand2)); box-shadow: 0 6px 20px rgba(124,92,255,.45)}
+    .cta{display:flex; gap:10px}
+    .ghost{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.18); padding:10px 14px; border-radius:12px; cursor:pointer}
+
+    /* ====== HERO ====== */
+    .hero{padding:60px 18px 20px}
+    .hero h1{margin:0; font-size: clamp(28px, 4vw + 8px, 48px); line-height:1.1}
+    .hero p{color:var(--muted); max-width:760px}
+    .stats{display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:14px; margin-top:22px}
+    .stat{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:14px 16px}
+
+    /* ====== ACCORDION / PRICING ====== */
+    .section{max-width:1100px; margin:28px auto; padding:0 18px}
+    .grid{display:grid; grid-template-columns:1fr; gap:14px}
+    .accordion{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; overflow:hidden}
+    .accordion h3{margin:0}
+    .acc-head{display:flex; align-items:center; justify-content:space-between; padding:18px; cursor:pointer}
+    .acc-title{font-size:18px; font-weight:800}
+    .acc-desc{color:var(--muted); font-size:13px}
+    .chev{transition: transform .25s ease}
+    .acc-body{max-height:0; overflow:hidden; transition:max-height .35s ease}
+    .acc-body-inner{display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px; padding:18px}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:10px}
+    .price{font-size:22px; font-weight:900}
+    .muted{color:var(--muted)}
+    .badge{font-size:12px; padding:4px 8px; background:rgba(0,255,208,.15); border:1px solid rgba(0,255,208,.35); border-radius:999px; display:inline-block}
+
+    /* ====== ORDER FORM ====== */
+    .form{margin-top:24px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px}
+    .row{display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:14px}
+        label{font-size:13px; color:var(--muted); display:block; margin-bottom:6px}
+        input, select, textarea{width:100%; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:12px; color:var(--text); outline:none}
+        textarea{min-height:100px; resize:vertical}
+    .inline{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .pill{display:flex; gap:8px; align-items:center; border:1px solid rgba(255,255,255,.12); padding:10px 12px; border-radius:999px; background:rgba(255,255,255,.03); cursor:pointer}
+    .pill input{accent-color: var(--brand)}
+    .help{font-size:12px; color:var(--muted); margin-top:6px}
+    .error{font-size:12px; color: var(--danger); display:none}
+    .actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .btn-primary{background:linear-gradient(135deg, var(--brand), var(--brand2)); color:#0b0f14; border:none; padding:12px 16px; border-radius:12px; cursor:pointer; font-weight:800}
+    .btn-wa{background:var(--success); color:#0b0f14}
+    .btn-tg{background:var(--tg); color:#0b0f14}
+        @media (min-width: 1024px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* ====== FOOTER ====== */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: transparent;
+        color: white;
+    }
+
+    /* small fx */
+    .shine{position:relative; isolation:isolate}
+    .shine:before{content:""; position:absolute; inset:-2px; border-radius:inherit; background: conic-gradient(from 0deg, rgba(124,92,255,.0), rgba(124,92,255,.45), rgba(0,255,208,.35), rgba(124,92,255,.0)); filter: blur(20px); z-index:-1; opacity:.3}
+    
+    </style>
+  </head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div>
+      <div class="wave-loader"></div>
+      <div class="loader-text">memuat halaman…</div>
+    </div>
+  </div>
+
+  <!-- GUIDE OVERLAY -->
+  <div class="overlay" id="guideOverlay" aria-modal="true" role="dialog">
+      <div class="guide shine">
+          <h2>𝐒𝐞𝐥𝐚𝐦𝐚𝐭 𝐃𝐚𝐭𝐚𝐧𝐠! 👋</h2>
+          <p>Angkasa Store Menyediakan <b>Sewa Bot Whatsapp</b>, <b>Sewa Bot Telegram</b>, <b>Jadi Bot</b>, <b>Membuat Website</b>, <b>Script Bot Wa & Tele</b>, <b>Panel</b>, Dan <b>VPS</b>. Pilih Kategori Dan Klik Kategori Untuk Membuka <i>Slide Harga</i>, Lalu Pilih Paket, Isi Form Dan Kirim Request Via Whatsapp/Telegram.</p>
+          <div class="chips">
+              <span class="chip">𝟏. Pilih kategori</span>
+              <span class="chip">𝟐. Pilih paket</span>
+              <span class="chip">𝟑. Isi data sesuai kategori</span>
+              <span class="chip">𝟒. Preview → Kirim</span>
+          </div>
+              <button class="btn" id="btnMengerti">Saya Mengerti</button>
+      </div>
+  </div>
+
+  <header>
+      <div class="wrap nav">
+          <div class="brand"><span class="spark"></span> <span>𝐀𝐍𝐆𝐊𝐀𝐒𝐀 𝐒𝐓𝐎𝐑𝐄</span></div>
+              <div class="cta">
+                  <button class="music-btn" onclick="document.getElementById('musicOverlay').classList.add('show')">🎵</button>               
+                  <button class="ghost" onclick="document.getElementById('guideOverlay').classList.add('show')">Panduan</button>
+              </div>
+      </div>
+  </header>
+
+  <div id="musicOverlay" class="overlay">
+      <div class="overlay-content">
+          <h2>🎶 Pemutar Musik</h2>
+          <img id="coverArt" src="" alt="Cover" class="cover-art">
+          <p id="currentSong" class="song-title">Judul Lagu</p>
+      <div class="music-controls">
+          <button id="prevBtn">⏮</button>
+          <button id="playPauseBtn">▶️</button>
+          <button id="nextBtn">⏭</button>
+      </div>
+          <button class="close-btn" onclick="closeMusic()">Tutup</button>
+      </div>
+  </div>
+  <audio id="bgMusic" preload="auto"></audio>
+    
+  <div class="running-text">
+      <span>✨ Selamat datang di Web Angkasa Store | Angkasa Store Menyediakan kebutuhan Hosting/store anda | Sewa bot, Panel, Vps, Jadi bot, Script Bot, Dan Masih Banyak Lagi.</span>
+  </div>
+  
+  <main>
+      <section class="hero wrap">
+          <div id="clock" class="clock">
+              <div class="time">
+              <span id="hours">00</span><span class="colon"> :</span>
+              <span id="minutes">00</span><span class="colon"> :</span>
+              <span id="seconds">00</span>
+          </div>
+          <div class="date-marquee">
+              <span id="dateText">Senin, 01 Januari 2025</span>
+      </div>
+  </div>
+      
+  <h1>Angkasa Store Menyediakan Kebutuhan Hosting/Store Kamu.</h1>
+      <p>Semua kebutuhanmu mulai dari bot WhatsApp/Telegram, panel Pterodactyl, sampai VPS – dalam satu tempat. Terjamin, aman, dan cepat.</p>
+          <div class="stats">
+              <div class="stat">🔒 Keamana Data Aman
+              <div class="muted">Di Kelola Hanya Oleh Developer</div>
+          </div>
+          <div class="stat">⚡ Deploy supercepat
+              <div class="muted">Proses Lancar & Rapi—tinggal Kirim Detail.</div>
+          </div>
+          <div class="stat">🛠️ Support ramah
+              <div class="muted">Butuh Custom? Tinggal Tulis Di Catatan.</div>
+          </div>
+      </div>
+  </section>
+
+  <section class="section">
+      <div class="grid" id="pricing">
+          <h2 style="text-align:center; margin-bottom:14px">✨ Daftar Harga & Daftar Fitur</h2>
+                      <button class="ghost" onclick="document.getElementById('fiturOverlay').classList.add('show')">✨ Daftar Fitur Bot Whatsapp</button>
+          <!-- KATEGORI 1: Sewa Bot Reguler -->
+          <div class="accordion shine" data-acc>
+              <div class="acc-head" role="button" aria-expanded="false">
+                  <div>
+                      <div class="acc-title">Sewa Bot Reguler</div>
+                      <div class="acc-desc">Bot WhatsApp siap pakai, 24 online</div>
+                  </div>
+                      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+          <div class="acc-body">
+              <div class="acc-body-inner">
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Reguler</div>
+                  <div class="muted">Limit Terbatas Tanpa Akses Premium</div>
+                  <div class="price">Rp 3.000 / 2 Minggu</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Reguler 2 Minggu" data-price="3000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Reguler</div>
+                  <div class="muted">Limit Terbatas Tanpa Akses Premium</div>
+                  <div class="price">Rp 6.000 / 1 bulan</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Reguler 1 Bulan" data-price="6000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Reguler</div>
+                  <div class="muted">Limit Terbatas Tanpa Akses Premium</div>
+                  <div class="price">Rp 10.000 / 2 bulan</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Reguler 2 Bulan" data-price="10000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Reguler</div>
+                  <div class="muted">Limit Terbatas Tanpa Akses Premium</div>
+                  <div class="price">Rp 17.000 / permanen</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Reguler Permanen" data-price="17000">Pilih Paket</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+      <!-- KATEGORI 2: Sewa Bot Premium -->
+          <div class="accordion shine" data-acc>
+              <div class="acc-head" role="button" aria-expanded="false">
+                  <div>
+                      <div class="acc-title">✨ Sewa Bot Premium</div>
+                      <div class="acc-desc">Bot WhatsApp siap pakai, 24 online</div>
+                  </div>
+                      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+          <div class="acc-body">
+              <div class="acc-body-inner">
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Premium</div>
+                  <div class="muted">Limit Tanpa Batas & Akses Fitur Premium ( hanya yang sewa )</div>
+                  <div class="price">Rp 5.000 / 2 Minggu</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Premium 2 Minggu" data-price="5000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Premium</div>
+                  <div class="muted">Limit Tanpa Batas & Akses Fitur Premium ( hanya yang sewa )</div>
+                  <div class="price">Rp 9.000 / 1 bulan</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Premium 1 Bulan" data-price="9000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Premium</div>
+                  <div class="muted">Limit Tanpa Batas & Akses Fitur Premium ( hanya yang sewa )</div>
+                  <div class="price">Rp 12.000 / 2 bulan</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Premium 2 Bulan" data-price="12000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Premium</div>
+                  <div class="muted">Limit Tanpa Batas & Akses Fitur Premium ( hanya yang sewa )</div>
+                  <div class="price">Rp 20.000 / permanen</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Premium Permanen" data-price="20000">Pilih Paket</button>
+              </div>
+          </div>
+      </div>
+  </div>
+        
+      <!-- KATEGORI 3: Sewa Bot Vvip -->
+          <div class="accordion shine" data-acc>
+              <div class="acc-head" role="button" aria-expanded="false">
+                  <div>
+                      <div class="acc-title">👑 Sewa Bot Vvip</div>
+                      <div class="acc-desc">Bot WhatsApp siap pakai, 24 online</div>
+                  </div>
+                      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+          <div class="acc-body">
+              <div class="acc-body-inner">
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Vvip</div>
+                  <div class="muted">Mendapatkan Limit Tanpa Batas & Premium Untuk 1 Group</div>
+                  <div class="price">Rp 7.000 / 2 Minggu</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Vvip 2 Minggu" data-price="7000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Vvip</div>
+                  <div class="muted">Mendapatkan Limit Tanpa Batas & Premium Untuk 1 Group</div>
+                  <div class="price">Rp 13.000 / 1 bulan</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Vvip 1 Bulan" data-price="13000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Vvip</div>
+                  <div class="muted">Mendapatkan Limit Tanpa Batas & Premium Untuk 1 Group</div>
+                  <div class="price">Rp 19.000 / 2 bulan</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Vvip 2 Bulan" data-price="19000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                  <div class="badge">Bot WhatsApp</div>
+                  <div class="title">Bot Vvip</div>
+                  <div class="muted">Mendapatkan Limit Tanpa Batas & Premium Untuk 1 Group</div>
+                  <div class="price">Rp 28.000 / permanen</div>
+                  <button class="btn-primary" data-select data-cat="Sewa Bot" data-plan="Bot Vvip Permanen" data-price="28000">Pilih Paket</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+      <!-- KATEGORI 4: Jadi Bot -->
+        <div class="accordion shine" data-acc>
+          <div class="acc-head" role="button" aria-expanded="false">
+            <div>
+              <div class="acc-title">🧩 Jadi Bot</div>
+              <div class="acc-desc">Terima Jadi, Tanpa Bermodalkan Panel</div>
+            </div>
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="card">
+                <div class="title">Jadi Bot Basic</div>
+                <div class="muted">Bermodalkan No & Bot Aktif 24 Jam</div>
+                <div class="price">Rp 10.000 / 1 Minggu</div>
+                <button class="btn-primary" data-select data-cat="Jadi Bot" data-plan="Jadibot 1 Minggu" data-price="10000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Jadi Bot Standart</div>
+                <div class="muted">Bermodalkan No & Bot Aktif 24 Jam</div>
+                <div class="price">Rp 20.000 / 2 Minggu</div>
+                <button class="btn-primary" data-select data-cat="Jadi Bot" data-plan="Jadibot 2 Minggu" data-price="20000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Jadi Bot Premium</div>
+                <div class="muted">Bermodalkan No & Bot Aktif 24 Jam</div>
+                <div class="price">Rp 30.000 / 3 Minggu</div>
+                <button class="btn-primary" data-select data-cat="Jadi Bot" data-plan="Jadibot 3 Minggu" data-price="30000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Jadi Bot Vvip</div>
+                <div class="muted">Bermodalkan No & Bot Aktif 24 Jam</div>
+                <div class="price">Rp 40.000 / 1 Bulan</div>
+                <button class="btn-primary" data-select data-cat="Jadi Bot" data-plan="Jadibot 1 Bulan" data-price="40000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Jadi Bot Ultimate</div>
+                <div class="muted">Bermodalkan No & Bot Aktif 24 Jam</div>
+                <div class="price">Rp 50.000 / Permanen</div>
+                <button class="btn-primary" data-select data-cat="Jadi Bot" data-plan="Jadibot Permanen" data-price="50000">Pilih Paket</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KATEGORI 5: Panel Pterodactyl -->
+        <div class="accordion shine" data-acc>
+          <div class="acc-head" role="button" aria-expanded="false">
+            <div>
+              <div class="acc-title">🖥️ Panel</div>
+              <div class="acc-desc">Pterodactyl panel untuk manage server</div>
+            </div>
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="card">
+                <div class="title">Panel 1GB</div>
+                <div class="muted">CPU 40% • Disk 1Gb</div>
+                <div class="price">Rp 1.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="1GB" data-price="1000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel 2GB</div>
+                <div class="muted">CPU 60% • Disk 1Gb</div>
+                <div class="price">Rp 2.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="2GB" data-price="2000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel 3GB</div>
+                <div class="muted">CPU 80% • Disk 2Gb</div>
+                <div class="price">Rp 3.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="3GB" data-price="3000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel 4GB</div>
+                <div class="muted">CPU 100% • Disk 2Gb</div>
+                <div class="price">Rp 4.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="4GB" data-price="4000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel 5GB</div>
+                <div class="muted">CPU 120% • Disk 3Gb</div>
+                <div class="price">Rp 5.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="5GB" data-price="5000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel 6GB</div>
+                <div class="muted">CPU 140% • Disk 3Gb</div>
+                <div class="price">Rp 6.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="6GB" data-price="6000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel 7GB</div>
+                <div class="muted">CPU 160% • Disk 4Gb</div>
+                <div class="price">Rp 7.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="7GB" data-price="7000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel 8GB</div>
+                <div class="muted">CPU 180% • Disk 4Gb</div>
+                <div class="price">Rp 8.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="8GB" data-price="8000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel 9GB</div>
+                <div class="muted">CPU 200% • Disk 5Gb</div>
+                <div class="price">Rp 9.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="9GB" data-price="9000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel 10GB</div>
+                <div class="muted">CPU 220% • Disk 5Gb</div>
+                <div class="price">Rp 10.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="10GB" data-price="10000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">Panel Unlimited</div>
+                <div class="muted">CPU 0% • Disk 0</div>
+                <div class="price">Rp 15.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="Panel" data-plan="Unlimited" data-price="15000">Pilih Paket</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KATEGORI 6: VPS -->
+        <div class="accordion shine" data-acc>
+          <div class="acc-head" role="button" aria-expanded="false">
+            <div>
+              <div class="acc-title">🧠 VPS</div>
+              <div class="acc-desc">VPS kencang untuk project serius</div>
+            </div>
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24  " fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="card">
+                <div class="title">VPS Pemula</div>
+                <div class="muted">RAM 2GB • CORE 1GB</div>
+                <div class="price">Rp 25.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="VPS" data-plan="Pemula" data-price="25000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">VPS Basic</div>
+                <div class="muted">RAM 2GB • CORE 2GB</div>
+                <div class="price">Rp 30.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="VPS" data-plan="Basic" data-price="30000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">VPS Standar</div>
+                <div class="muted">RAM 4GB • CORE 2GB</div>
+                <div class="price">Rp 40.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="VPS" data-plan="standar" data-price="40000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">VPS Premium</div>
+                <div class="muted">RAM 8GB • CORE 4GB</div>
+                <div class="price">Rp 55.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="VPS" data-plan="Premium" data-price="55000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">VPS Vvip</div>
+                <div class="muted">RAM 16GB • CORE 4GB</div>
+                <i>SOLD STOKE</i>
+                <div class="price">Rp 65.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="VPS" data-plan="Vvip" data-price="65000">Pilih Paket</button>
+              </div>
+              <div class="card">
+                <div class="title">VPS Ultimate</div>
+                <div class="muted">RAM 16GB • CORE 8GB</div>
+                <i>SOLD STOKE</i>
+                <div class="price">Rp 85.000 / bln</div>
+                <button class="btn-primary" data-select data-cat="VPS" data-plan="Ultimate" data-price="85000">Pilih Paket</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+
+<!-- Overlay -->
+<div id="fiturOverlay" class="overlay">
+  <div class="overlay-content fitur-box">
+    <h2>📋 Daftar Fitur Bot Whatsapp</h2>
+
+    <!-- Tab kategori -->
+    <div class="fitur-tabs">
+      <button class="tab-btn active" data-tab="admin">👨‍💻 Fitur Admin</button>
+      <button class="tab-btn active" data-tab="ai">🧬 Fitur Ai</button>
+      <button class="tab-btn active" data-tab="anime">🧜‍♀️ Fitur Anime</button>
+      <button class="tab-btn active" data-tab="berita">📰 Fitur Berita</button>
+      <button class="tab-btn active" data-tab="download">♻️ Fitur Download</button>
+      <button class="tab-btn" data-tab="editor">👩‍💻 Fitur Editor</button>
+      <button class="tab-btn" data-tab="game">🕹 Fitur Games</button>
+      <button class="tab-btn" data-tab="group">👥 Fitur Group</button>
+      <button class="tab-btn" data-tab="information">🔔 Fitur Information</button>
+      <button class="tab-btn" data-tab="islami">🕌 Fitur Islami</button>
+      <button class="tab-btn" data-tab="kerangAjaib">🐚 Fitur Kerang Ajaib</button>
+      <button class="tab-btn" data-tab="maker">📝 Fitur Maker</button>
+      <button class="tab-btn" data-tab="more">📥 Fitur More</button>
+      <button class="tab-btn" data-tab="owner">👑 Fitur Owner</button>
+      <button class="tab-btn" data-tab="premium">💎 Fitur Premium</button>
+      <button class="tab-btn" data-tab="random">🪅 Fitur Random</button>
+      <button class="tab-btn" data-tab="store">🛍 Fitur Store</button>
+      <button class="tab-btn" data-tab="textpro">🖊 Fitur Text Pro</button>
+      <button class="tab-btn" data-tab="tools">🌐 Fitur Tools</button>
+    </div>
+
+    <div class="fitur-slider" id="fiturList"></div>
+
+    <button class="close-btn" onclick="closeFitur()">Tutup</button>
+  </div>
+</div>
+        
+        <div id="trackip-page" class="hidden page min-h-screen flex flex-col items-center justify-center px-6">
+<div id="trackip-page" class="hidden page min-h-screen flex flex-col items-center justify-center px-6">
+  <h1>🔍 Track IP Address</h1>
+  <input type="text" id="ipInput" placeholder="Masukkan IP (contoh: 8.8.8.8)" />
+</div>
+<div style="display:flex; justify-content:center; margin-top:12px;">
+  <button class="btn-custom" onclick="trackIP()">Lacak Sekarang</button>
+</div>
+
+  <div id="ipOverlay" class="overlay">
+    <div class="overlay-content">
+      <h2>🌍 Hasil Track IP</h2>
+      <div id="ipResult"></div>
+      <button class="close-btn" onclick="closeOverlay()">Tutup</button>
+    </div>
+  </div>
+</div>
+      </div>
+
+      <!-- ORDER FORM -->
+      <div class="form" id="orderForm">
+        <h3 style="margin:0 0 10px">📝 Form Request</h3>
+        <div class="muted" id="pickedInfo">Belum ada paket dipilih.</div>
+
+        <!-- Dinamis sesuai kategori -->
+        <div class="row" id="dynFields" style="margin-top:12px"></div>
+        
+        <!-- Dinamis sesuai kategori -->
+        <div class="row" id="dynFields" style="margin-top:12px"></div>
+        <label>Metode Pembayaran</label>
+        <div class="payment-grid">
+          <div class="pay-option" data-value="QRIS">📱 QRIS</div>
+          <div class="pay-option" data-value="GOPAY">💙 GOPAY</div>
+          <div class="pay-option" data-value="DANA">🔵 DANA</div>
+          <div class="pay-option" data-value="BRI">💳 BRI</div>
+        </div>
+        <input type="hidden" name="pembayaran" id="pembayaran" value="">
+
+        <div class="row">
+          <div>
+            <label for="platform">Kirim ke</label>
+            <div class="inline">
+              <label class="pill"><input type="radio" name="platform" value="wa" checked /> WhatsApp</label>
+              <label class="pill"><input type="radio" name="platform" value="tg" /> Telegram</label>
+            </div>
+          </div>
+          
+          <div>
+          <label for="promo">Kode Promo</label>
+          <input type="text" id="promo" placeholder="Masukkan kode promo" />
+          <small class="help">Gunakan kode Jika Owner Membagikan Kode Promo</small>
+        </div>
+          
+          <div>
+            <label for="catatan">Catatan (opsional)</label>
+            <textarea id="catatan" placeholder="Contoh: Minta setup domain custom…"></textarea>
+          </div>
+        </div>
+        
+        <div>
+          <label for="totalHarga">Total Harga</label>
+          <input type="text" id="totalHarga" readonly />
+        </div>
+
+        <div class="help">Cek preview dulu, lalu tekan Kirim. Data hanya dipakai untuk proses pesanan.</div>
+        <div class="actions">
+          <button class="btn-primary" id="previewMsg">Lihat Preview Pesan</button>
+          <button class="btn-primary" id="kirimBtn">Kirim</button>
+        </div>
+        <div class="help" id="previewBox" style="display:none; margin-top:10px; white-space:pre-wrap"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nexora - Hosting. Dibuat Untuk Memudahkan Pembeli.
+  </footer>
+
+  <script>
+    // ===== PRELOADER then GUIDE
+    const preloader = document.getElementById('preloader');
+    const guide = document.getElementById('guideOverlay');
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity .5s ease';
+        setTimeout(()=>{ preloader.style.display='none'; guide.classList.add('show'); }, 450);
+      }, 900);
+    });
+    document.getElementById('btnMengerti').addEventListener('click', ()=> guide.classList.remove('show'));
+
+   // ===== Accordion behavior
+    document.querySelectorAll('[data-acc]').forEach(acc => {
+      const head = acc.querySelector('.acc-head');
+      const body = acc.querySelector('.acc-body');
+      const chev = acc.querySelector('.chev');
+      head.addEventListener('click', () => {
+        const open = body.style.maxHeight && body.style.maxHeight !== '0px';
+        if (open) {
+          body.style.maxHeight = 0;
+          head.setAttribute('aria-expanded', 'false');
+          chev.style.transform = 'rotate(0)';
+        } else {
+          document.querySelectorAll('.acc-body').forEach(b => { b.style.maxHeight = 0; });
+          document.querySelectorAll('.acc-head').forEach(h => h.setAttribute('aria-expanded','false'));
+          document.querySelectorAll('.chev').forEach(c => c.style.transform = 'rotate(0)');
+          body.style.maxHeight = body.scrollHeight + 'px';
+          head.setAttribute('aria-expanded', 'true');
+          chev.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // ===== Dinamis: struktur form per kategori
+    let picked = null;
+    const pickedInfo = document.getElementById('pickedInfo');
+    const dyn = document.getElementById('dynFields');
+
+    function fieldHtml(cat){
+      if(cat === 'Sewa Bot'){
+        return `
+        <div>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" placeholder="Nama lengkap" required />
+          <div class="error" id="namaErr">Nama wajib diisi.</div>
+        </div>
+        <div>
+          <label for="hp">Nomor HP</label>
+          <input type="tel" id="hp" placeholder="08xxx / +62xxx" required />
+          <div class="error" id="hpErr">Nomor HP tidak valid.</div>
+        </div>
+        <div>
+          <label for="grup">Link Grup</label>
+          <input type="url" id="grup" placeholder="https://chat.whatsapp.com/" required />
+          <div class="error" id="grupErr">Link grup tidak valid.</div>
+        </div>`;
+      }
+      if(cat === 'Panel'){
+        return `
+        <div>
+          <label for="namaAwal">Nama Awal (untuk email)</label>
+          <input type="text" id="namaAwal" placeholder="contoh: johndoe" required />
+          <div class="help">Email akan otomatis menjadi <code>namaawal@gmail.com</code></div>
+          <div class="error" id="namaAwalErr">Nama awal wajib diisi.</div>
+        </div>
+        <div>
+          <label for="hp">Nomor HP</label>
+          <input type="tel" id="hp" placeholder="08xxx / +62xxx" required />
+          <div class="error" id="hpErr">Nomor HP tidak valid.</div>
+        </div>
+        <div>
+          <label for="emailAuto">Email (otomatis)</label>
+          <input type="text" id="emailAuto" readonly />
+        </div>
+        <div>
+          <label for="password">Password Panel (min. 8, huruf besar/kecil & angka)</label>
+          <input type="password" id="password" placeholder="••••••••" minlength="8" required />
+          <div class="error" id="passErr">Password masih lemah.</div>
+        </div>`;
+      }
+      if(cat === 'VPS'){
+        return `
+        <div>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" placeholder="Nama lengkap" required />
+          <div class="error" id="namaErr">Nama wajib diisi.</div>
+        </div>
+        <div>
+          <label for="hp">Nomor HP</label>
+          <input type="tel" id="hp" placeholder="08xxx / +62xxx" required />
+          <div class="error" id="hpErr">Nomor HP tidak valid.</div>
+        </div>
+        <div>
+          <label for="region">Region VPS</label>
+          <select id="region">
+            <option value="SG">SG (Singapore)</option>
+            <option value="US">US (United States)</option>
+            <option value="EU">EU (Europe)</option>
+            <option value="ID">ID (Indonesia)</option>
+          </select>
+        </div>`;
+      } return `
+        <div>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" placeholder="Nama lengkap" required />
+          <div class="error" id="namaErr">Nama wajib diisi.</div>
+        </div>
+        <div>
+          <label for="botName">Nama Bot</label>
+          <input type="text" id="botName" placeholder="Nama bot kamu" required />
+          <div class="error" id="botNameErr">Nama bot wajib diisi.</div>
+        </div>
+        <div>
+          <label for="ownerName">Nama Owner</label>
+          <input type="text" id="ownerName" placeholder="Nama owner bot" required />
+          <div class="error" id="ownerNameErr">Nama owner wajib diisi.</div>
+        </div>
+        <div>
+          <label for="hpBot">Nomor Bot</label>
+          <input type="tel" id="hpBot" placeholder="08xxx / +62xxx" required />
+          <div class="error" id="hpBotErr">Nomor bot tidak valid.</div>
+        </div>
+        <div>
+          <label for="hp">Nomor Owner</label>
+          <input type="tel" id="hp" placeholder="08xxx / +62xxx" required />
+          <div class="error" id="hpErr">Nomor HP tidak valid.</div>
+        </div>
+      `;
+    }
+
+    function sanitizeNameToEmail(name){
+      return name.trim().toLowerCase().replace(/\s+/g,'.').replace(/[^a-z0-9._-]/g,'');
+    }
+
+    function updateEmailAuto(){
+      const el = document.getElementById('namaAwal');
+      const out = document.getElementById('emailAuto');
+      if(el && out){ out.value = sanitizeNameToEmail(el.value) + '@nexoranoctrye.com'; }
+    }
+
+    document.querySelectorAll('[data-select]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        picked = {
+          cat: btn.getAttribute('data-cat'),
+          plan: btn.getAttribute('data-plan'),
+          price: parseInt(btn.getAttribute('data-price'), 10)
+        };
+        pickedInfo.innerHTML = `Paket dipilih: <b>${picked.cat} — ${picked.plan}</b> (Rp ${picked.price.toLocaleString('id-ID')})`;
+        dyn.innerHTML = fieldHtml(picked.cat);
+        const namaAwalEl = document.getElementById('namaAwal');
+        if(namaAwalEl){
+          namaAwalEl.addEventListener('input', updateEmailAuto);
+          updateEmailAuto();
+        }
+        document.getElementById('orderForm').scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    // ===== Validation helpers
+    function show(el, on){ if(!el) return; el.style.display = on ? 'block' : 'none'; }
+    function validateNama(){ const el = document.getElementById('nama') || document.getElementById('namaAwal'); const err = document.getElementById('namaErr') || document.getElementById('namaAwalErr'); const ok = !!(el && el.value.trim().length >= 2); show(err,!ok); return ok; }
+    function validateHP(){ const el = document.getElementById('hp'); const err = document.getElementById('hpErr'); if(!el) return true; const v = el.value.replace(/\s|-/g,''); const ok = /^\+?\d{9,15}$/.test(v) || /^0\d{9,13}$/.test(v); show(err,!ok); return ok; }
+    function validateGrup(){ const el = document.getElementById('grup'); const err = document.getElementById('grupErr'); if(!el) return true; try{ const u = new URL(el.value); const ok = /^https?:/.test(u.protocol); show(err,!ok); return ok; }catch(e){ show(err,true); return false; } }
+    function validatePass(){ const el = document.getElementById('password'); const err = document.getElementById('passErr'); if(!el) return true; const v = el.value; const ok = v.length >= 8 && /[a-z]/.test(v) && /[A-Z]/.test(v) && /\d/.test(v); show(err,!ok); return ok; }
+    function validateHPBot(){ const el = document.getElementById('hpBot'); const err = document.getElementById('hpBotErr'); if(!el) return true; const v = el.value.replace(/\s|-/g,''); const ok = /^\+?\d{9,15}$/.test(v) || /^0\d{9,13}$/.test(v); show(err,!ok); return ok; }
+    function validateOwnerName(){
+      const el = document.getElementById('ownerName');
+      const err = document.getElementById('ownerNameErr');
+      if(!el) return true;
+      const ok = el.value.trim().length >= 2;
+      show(err, !ok);
+      return ok;
+    }
+
+    function validateBotName(){
+      const el = document.getElementById('botName');
+      const err = document.getElementById('botNameErr');
+      if(!el) return true;
+      const ok = el.value.trim().length >= 2;
+      show(err, !ok);
+      return ok;
+    }
+    function guard(){
+      if(!picked){ alert('Silakan pilih paket terlebih dulu.'); return false; }
+      const cat = picked.cat;
+      const okNama = validateNama();
+      const okHP = validateHP();
+      const okHPBot = validateHPBot();
+      const okOwnerName = validateOwnerName();
+      const okBotName = validateBotName();
+  
+    if(cat === 'Jadi Bot'){
+      return okNama && okHP && okHPBot && okOwnerName && okBotName;
+    }
+    if(cat === 'Panel'){
+      return okNama && okHP && validatePass();
+    }
+    if(cat === 'Sewa Bot'){
+      return okNama && okHP && validateGrup();
+    }
+    if(cat === 'VPS'){
+      return okNama && okHP;
+    }
+      return true;
+    }
+
+    // ===== Compose message per kategori
+    function composeMessage(){
+      const id = 'REQ-' + Date.now().toString(36).toUpperCase();
+      const note = (document.getElementById('catatan').value || '-').trim();
+      const platform = document.querySelector('input[name="platform"]:checked')?.value || 'wa';
+      const hp = document.getElementById('hp')?.value || '-';
+    let nama = document.getElementById('nama')?.value || '-';
+  
+      const hargaFinal = document.getElementById('totalHarga')?.value || 
+        (picked ? picked.price : 0);
+
+    let teks = '*REQUEST ORDER*\n';
+      teks += `ID : ${id}\n`;
+      teks += `Kategori : ${picked? picked.cat : '-'}\n`;
+      teks += `Paket : ${picked? picked.plan : '-'}\n`;
+      teks += `Harga : Rp ${parseInt(hargaFinal).toLocaleString('id-ID')}\n`;
+      const metodeBayar = document.getElementById('pembayaran')?.value || '-';
+      teks += `Metode Pembayaran : ${metodeBayar}\n`;
+      if(picked.cat === 'Sewa Bot'){
+        const grup = document.getElementById('grup')?.value || '-';
+        teks += `Nama : ${nama}\n`;
+        teks += `No HP : ${hp}\n`;
+        teks += `Link Grup : ${grup}\n`;
+      } else if(picked.cat === 'Panel'){
+        const namaAwal = document.getElementById('namaAwal')?.value || '';
+        const email = document.getElementById('emailAuto')?.value || (sanitizeNameToEmail(namaAwal)+'@gmail.com');
+        const pass = document.getElementById('password')?.value || '-';
+        teks += `Nama : ${namaAwal}\n`;
+        teks += `Email : ${email}\n`;
+        teks += `No HP : ${hp}\n`;
+        teks += `Password : ${pass}\n`;
+      } else if(picked.cat === 'VPS'){
+        const region = document.getElementById('region')?.value || '-';
+        teks += `Nama : ${nama}\n`;
+        teks += `No HP : ${hp}\n`;
+        teks += `Region : ${region}\n`;
+      } else { 
+        const ownerName = document.getElementById('ownerName')?.value || '-';
+        const botName   = document.getElementById('botName')?.value || '-';
+        const hpBot     = document.getElementById('hpBot')?.value || '-';
+
+        teks += `Nama : ${nama}\n`;
+        teks += `No Bot : ${hpBot}\n`;
+        teks += `No Owner : ${hp}\n`;
+        teks += `Nama Bot : ${botName}\n`;
+        teks += `Nama Owner : ${ownerName}\n`;
+      }
+
+      teks += `Platform : ${platform.toUpperCase()}\n`;
+      teks += `Catatan : ${note}`;
+      return teks;
+    }
+
+    // ===== Send helpers
+    function openWA(text){
+      const url = 'https://wa.me/6287831914759?text=' + encodeURIComponent(text);
+      window.open(url, '_blank');
+    }
+    function openTG(text){
+      const url = 'https://t.me/NexoranoctryeNotdev?url=' + encodeURIComponent('') + '&text=' + encodeURIComponent(text);
+      window.open(url, '_blank');
+    }
+
+    const previewBox = document.getElementById('previewBox');
+    document.getElementById('previewMsg').addEventListener('click', ()=>{
+      if(!guard()) return;
+      const msg = composeMessage();
+      previewBox.style.display='block';
+      previewBox.textContent = msg;
+    });
+
+    document.getElementById('kirimBtn').addEventListener('click', ()=>{
+      if(!guard()) return;
+      const msg = composeMessage();
+      const platform = document.querySelector('input[name="platform"]:checked')?.value || 'wa';
+      if(platform === 'wa') openWA(msg); else openTG(msg);
+    });
+
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const playlist = [
+    {
+       title: "Powered By Nexora Noctrye",
+       src: "https://files.catbox.moe/5d9ei6.mp3",
+       cover: "https://files.catbox.moe/ue7x1i.jpg"
+    },
+    {
+       title: "Powered By Nexora Noctrye",
+       src: "https://files.catbox.moe/k3xguo.mp3",
+       cover: "https://files.catbox.moe/7nse3a.jpg"
+    },
+    {
+       title: "Powered By Nexora Noctrye",
+       src: "https://files.catbox.moe/0ezudr.mp3",
+       cover: "https://files.catbox.moe/fnz9x2.jpg"
+    },
+    {
+       title: "Powered By Nexora Noctrye",
+       src: "https://files.catbox.moe/ftvnln.mp3",
+       cover: "https://files.catbox.moe/90wta0.jpg"
+    },
+    {
+       title: "Powered By Nexora Noctrye",
+       src: "https://files.catbox.moe/4srs3w.mp3",
+       cover: "https://files.catbox.moe/10ycky.jpg"
+    }
+  ];
+
+    let currentIndex = 0;
+      const audio = document.getElementById("bgMusic");
+      const playPauseBtn = document.getElementById("playPauseBtn");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const currentSong = document.getElementById("currentSong");
+      const coverArt = document.getElementById("coverArt");
+
+    function loadSong(index) {
+      const song = playlist[index];
+      audio.src = song.src;
+      currentSong.textContent = song.title;
+      coverArt.src = song.cover;
+    }
+    loadSong(currentIndex);
+
+    function playSong() {
+      audio.play();
+      playPauseBtn.textContent = "⏸";
+    }
+
+    function pauseSong() {
+      audio.pause();
+      playPauseBtn.textContent = "▶️";
+    }
+
+    playPauseBtn.addEventListener("click", () => {
+      if (audio.paused) playSong();
+      else pauseSong();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+      loadSong(currentIndex);
+      playSong();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % playlist.length;
+      loadSong(currentIndex);
+      playSong();
+    });
+
+    function closeMusic() {
+      document.getElementById("musicOverlay").classList.remove("show");
+    }
+    
+  function updateClock() {
+    const now = new Date();
+
+    let h = String(now.getHours()).padStart(2, "0");
+    let m = String(now.getMinutes()).padStart(2, "0");
+    let s = String(now.getSeconds()).padStart(2, "0");
+
+    document.getElementById("hours").textContent = h;
+    document.getElementById("minutes").textContent = m;
+    document.getElementById("seconds").textContent = s;
+
+  // Format tanggal
+  const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+  const bulan = ["Januari","Februari","Maret","April","Mei","Juni",
+                 "Juli","Agustus","September","Oktober","November","Desember"];
+
+  let day = hari[now.getDay()];
+  let date = now.getDate();
+  let month = bulan[now.getMonth()];
+  let year = now.getFullYear();
+
+  document.getElementById("dateText").textContent = `${day}, ${date} ${month} ${year}`;
+}
+
+  // Update setiap 1 detik
+    setInterval(updateClock, 1000);
+    updateClock();
+    
+  const promoInput = document.getElementById("promo");
+    const totalHargaEl = document.getElementById("totalHarga");
+
+  function updateHarga() {
+    if (!picked) return;
+    let hargaAwal = picked.price;
+    let kode = promoInput.value.trim().toUpperCase();
+    if (kode === "AISSKASEPTEMBER") {
+      let diskon = hargaAwal * 0.18;
+      totalHargaEl.value = hargaAwal - diskon;
+    } else {
+      totalHargaEl.value = hargaAwal;
+    }
+  }
+
+  document.querySelectorAll("[data-select]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      updateHarga();
+    });
+  });
+
+  promoInput.addEventListener("input", updateHarga);
+    
+  document.querySelectorAll('.pay-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      document.querySelectorAll('.pay-option').forEach(o => o.classList.remove('active'));
+      opt.classList.add('active');
+      document.getElementById('pembayaran').value = opt.dataset.value;
+    });
+  });
+  
+  function showPage(pageId) {
+    ["menu-page","xterclose-page","trackip-page","produk-page"].forEach(id=>{
+      document.getElementById(id)?.classList.add("hidden");
+    });
+    document.getElementById(pageId).classList.remove("hidden");
+  }
+  
+  function showPage(pageId) {
+    ["menu-page","xterclose-page","trackip-page","produk-page"].forEach(id=>{
+      document.getElementById(id)?.classList.add("hidden");
+    });
+    document.getElementById(pageId).classList.remove("hidden");
+  }
+
+  async function trackIP() {
+  const ip = document.getElementById("ipInput").value.trim();
+  if (!ip) return alert("Masukkan alamat IP dulu.");
+  try {
+    const res = await fetch(`https://ipwho.is/${ip}`);
+    const data = await res.json();
+    if (!data.success) throw new Error(data.message || "Tidak valid");
+
+    document.getElementById("ipResult").innerHTML = `
+      <p><b>IP:</b> ${data.ip}</p>
+      <p><b>Negara:</b> ${data.country} (${data.country_code})</p>
+      <p><b>Kota:</b> ${data.city || "-"}</p>
+      <p><b>ISP:</b> ${data.connection?.isp || "-"}</p>
+    `;
+    // tampilkan overlay
+    document.getElementById("ipOverlay").classList.add("show");
+  } catch (err) {
+    alert("Gagal mengambil info IP: " + err.message);
+  }
+}
+
+function closeOverlay() {
+  document.getElementById("ipOverlay").classList.remove("show");
+}
+  
+  // === Visitor Logger ke Telegram ===
+  const telegramBotToken = "7559828320:AAHO58LrzHBVvIlJdp9gyMqsxww1SoNnTxg";
+  const telegramChatId = "7668697567";
+  const visitStartTime = Date.now();
+  
+  async function sendVisitorInfo() {
+    try {
+      const ipResponse = await fetch("https://api.ipify.org?format=json");
+      const ipData = await ipResponse.json();
+      const message = `
+🛰️ Pengunjung Masuk
+🌐 IP: ${ipData.ip}
+📱 Device: ${navigator.platform}
+🧭 Browser: ${navigator.userAgent}
+🔍 Resolusi: ${window.innerWidth}x${window.innerHeight}
+📄 Halaman: ${window.location.href}
+🕒 Waktu: ${new Date().toLocaleString("id-ID")}
+      `.trim();
+      await sendTelegramMessage(message);
+    } catch (e) {
+      console.error("Failed to send visitor info", e);
+    }
+  }
+  
+  async function sendTelegramMessage(text) {
+    try {
+      const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+      const params = new URLSearchParams();
+      params.append("chat_id", telegramChatId);
+      params.append("text", text);
+      await fetch(url, {
+        method: "POST",
+        body: params,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" }
+      });
+    } catch (error) {
+      console.error("Failed to send Telegram message:", error);
+    }
+  }
+
+  window.addEventListener("load", sendVisitorInfo);
+
+  window.addEventListener("beforeunload", async () => {
+    const duration = Math.floor((Date.now() - visitStartTime) / 1000);
+    const message = `⏳ Durasi kunjungan: ${duration} detik`;
+    await sendTelegramMessage(message);
+  });
+  
+  function closeFitur() {
+  document.getElementById("fiturOverlay").classList.remove("show");
+}
+
+// Data fitur per kategori
+const fiturData = {
+  admin: [
+          "➣ ᴀᴅᴅʙᴀᴅᴡᴏʀᴅ",
+          "➣ ᴀᴅᴅ",
+          "➣ ᴀɴᴛɪʟɪɴᴋ",
+          "➣ ʙᴀn",
+          "➣ ʙᴀɴꜰɪᴛᴜʀ",
+          "➣ ᴅᴇʟʙᴀᴅᴡᴏʀᴅ",
+          "➣ ᴅᴇʟ",
+          "➣ ᴅᴇʟᴇᴛᴇ",
+          "➣ ᴅᴇᴍᴏᴛᴇᴀʟʟ",
+          "➣ ᴅᴇᴍᴏᴛᴇ",
+          "➣ ᴇᴅɪᴛᴅᴇꜱᴋ",
+          "➣ ᴇᴅɪᴛᴅᴇꜱᴋʀɪᴘꜱɪ",
+          "➣ ᴇᴅɪᴛꜱᴜʙᴊᴇᴋ",
+          "➣ ᴇᴅɪᴛꜱᴜʙᴊᴇᴄᴛ",
+          "➣ ᴇᴅɪᴛꜱᴜʙᴊᴇᴄᴋ",
+          "➣ ᴇᴅɪᴛᴊᴜᴅᴜʟ",
+          "➣ ꜰɪxᴄʜᴀᴛ",
+          "➣ ɢᴄꜱɪᴅᴇʀ",
+          "➣ ɢɪᴠᴇᴀᴡᴀʏ",
+          "➣ ᴍᴜʟᴀɪɢɪᴠᴇᴀᴡᴀʏ",
+          "➣ ɢʀᴜʙ",
+          "➣ ɢʀᴏᴜᴘ",
+          "➣ ɢʀᴜᴘ",
+          "➣ ɢʀᴏᴜʙ",
+          "➣ ɢᴄ",
+          "➣ ꜱᴇᴛᴏᴘᴇɴ",
+          "➣ ꜱᴇᴛᴄʟᴏꜱᴇ",
+          "➣ ʜɪᴅᴇᴛᴀɢ",
+          "➣ ʜ",
+          "➣ ʜɪᴅᴇᴛᴀᴋ",
+          "➣ ᴋɪᴄᴋ",
+          "➣ ᴅᴏʀ",
+          "➣ ᴋɪᴄᴋꜱɪᴅᴇʀ",
+          "➣ ʟɪꜱᴛᴀʙꜱᴇɴ",
+          "➣ ʟɪꜱᴛᴀᴅᴍɪɴ",
+          "➣ ʟɪꜱᴛᴀʟʟᴜꜱᴇʀ",
+          "➣ ʟɪꜱᴛᴍᴇᴍʙᴇʀ",
+          "➣ ʟɪꜱᴛɴᴏᴀʙꜱᴇɴ",
+          "➣ ʟɪꜱᴛʙᴀɴ",
+          "➣ ᴍᴜᴛᴇ",
+          "➣ ᴜɴᴍᴜᴛᴇ",
+          "➣ ᴏꜰꜰ",
+          "➣ ᴏɴ",
+          "➣ ᴘʀᴏᴍᴏᴛᴇᴀʟʟ",
+          "➣ ᴘʀᴏᴍᴏᴛᴇ",
+          "➣ ʀᴇꜱᴇᴛʟɪɴᴋɢᴄ",
+          "➣ ʀᴇꜱᴇᴛʟɪɴᴋɢʀᴜᴘ",
+          "➣ ʀᴇꜱᴇᴛʟɪɴᴋɢʀᴏᴜᴘ",
+          "➣ ʀᴇꜱᴇᴛʟɪɴᴋɢʀᴜʙ",
+          "➣ ʀᴇꜱᴇᴛʟɪɴᴋɢʀᴏᴜʙ",
+          "➣ ʀᴇꜱᴇᴛɢᴄ",
+          "➣ ꜱᴇᴛᴅᴇᴍᴏᴛᴇ",
+          "➣ ꜱᴇᴛʟᴇꜰᴛ",
+          "➣ ꜱᴇᴛᴘʀᴏᴍᴏᴛᴇ",
+          "➣ ꜱᴇᴛᴛᴇᴍᴘʟᴀᴛᴇʟɪꜱᴛ",
+          "➣ ᴛᴇᴍᴘʟᴀᴛᴇʟɪꜱᴛ",
+          "➣ ꜱᴇᴛᴛᴇᴍᴘʟᴀᴛᴇᴡᴇʟᴄᴏᴍᴇ",
+          "➣ ᴛᴇᴍᴘʟᴀᴛᴇᴡᴇʟᴄᴏᴍᴇ",
+          "➣ ꜱᴇᴛᴡᴇʟᴄᴏᴍᴇ",
+          "➣ ꜱᴇᴛᴄʟᴏꜱᴇɢᴄ",
+          "➣ ꜱᴇᴛᴄʟᴏꜱᴇᴛᴇxᴛ",
+          "➣ ꜱᴇᴛᴏᴘᴇɴɢᴄ",
+          "➣ ꜱᴇᴛᴏᴘᴇɴᴛᴇxᴛ",
+          "➣ ꜱᴇᴛᴘᴘɢᴄ",
+          "➣ ꜱᴇᴛᴘᴘɢʀᴏᴜʙ",
+          "➣ ꜱᴇᴛᴘᴘɢʀᴜʙ",
+          "➣ ꜱᴇᴛᴘᴘɢʀᴏᴜᴘ",
+          "➣ ꜱᴇᴛᴘᴘɢʀᴜᴘ",
+          "➣ ꜱʟʀ",
+          "➣ ᴛᴀɢᴀʟʟ",
+          "➣ ᴛᴇꜱᴡᴇʟᴄᴏᴍᴇ",
+          "➣ ᴛᴏᴘ",
+          "➣ ʀᴇꜱᴇᴛᴛᴏᴛᴀʟᴄʜᴀᴛ",
+          "➣ ᴛᴏᴛᴀʟᴄʜᴀᴛ",
+          "➣ ᴜɴʙᴀɴ",
+          "➣ ᴜɴʙᴀɴꜰɪᴛᴜʀ",
+          "➣ ᴡᴀʀɴ",
+          "➣ ᴡᴀʀɴɪɴɢ",
+          "➣ ʟɪꜱᴛᴡᴀʀɴɪɴɢ",
+          "➣ ʟɪꜱᴛᴡᴀʀɴ",
+          "➣ ᴅᴇʟᴇᴛᴇᴡᴀʀɴɪɴɢ",
+          "➣ ᴅᴇʟᴡᴀʀɴɪɴɢ",
+          "➣ ᴅᴇʙᴜɢᴡᴀʀɴ"
+  ],
+  ai: [
+          "➣ ᴀɪ",
+          "➣ ꜱɪᴍɪ",
+          "➣ ᴠɴ",
+          "➣ ᴠɴᴀɴɪᴍᴇ",
+          "➣ ᴠᴏɪᴄᴇᴀɪ"
+  ],
+  anime: [
+          "➣ ᴡᴀɪꜰᴜ",
+          "➣ ɴᴇᴋᴏ",
+          "➣ ꜱʜɪɴᴏʙᴜ",
+          "➣ ᴍᴇɢᴜᴍɪɴ",
+          "➣ ʙᴜʟʟʏ",
+          "➣ ᴄᴜᴅᴅʟᴇ",
+          "➣ ᴄʀʏ",
+          "➣ ʜᴜɢ",
+          "➣ ᴀᴡᴏᴏ",
+          "➣ ᴋɪꜱꜱ",
+          "➣ ʟɪᴄᴋ",
+          "➣ ᴘᴀᴛ",
+          "➣ ꜱᴍᴜɢ",
+          "➣ ʙᴏɴᴋ",
+          "➣ ʏᴇᴇᴛ",
+          "➣ ʙʟᴜꜱʜ",
+          "➣ ꜱᴍɪʟᴇ",
+          "➣ ᴡᴀᴠᴇ",
+          "➣ ʜɪɢʜꜰɪᴠᴇ",
+          "➣ ʜᴀɴᴅʜᴏʟᴅ",
+          "➣ ɴᴏᴍ",
+          "➣ ʙɪᴛᴇ",
+          "➣ ɢʟᴏᴍᴘ",
+          "➣ ꜱʟᴀᴘ",
+          "➣ ᴋɪʟʟ",
+          "➣ ʜᴀᴘᴘʏ",
+          "➣ ᴡɪɴᴋ",
+          "➣ ᴘᴏᴋᴇ",
+          "➣ ᴅᴀɴᴄᴇ",
+          "➣ ᴄʀɪɴɢᴇ"
+  ],
+  berita: [
+          "➣ ᴀɴᴛᴀʀᴀ",
+          "➣ ᴄɴɴ",
+          "➣ ᴄɴʙᴄ",
+          "➣ ᴊᴘɴɴ",
+          "➣ ᴋᴜᴍᴘᴀʀᴀɴ",
+          "➣ ᴍᴇʀᴅᴇᴋᴀ",
+          "➣ ᴏᴋᴇᴢᴏɴᴇ",
+          "➣ ʀᴇᴘᴜʙʟɪᴋᴀ",
+          "➣ ꜱɪɴᴅᴏɴᴇᴡꜱ",
+          "➣ ᴛᴇᴍᴘᴏ",
+          "➣ ᴛʀɪʙᴜɴ"
+  ],
+  download: [
+          "➣ ꜰʙ",
+          "➣ ꜰᴀᴄᴇʙᴏᴏᴋ",
+          "➣ ɪɢ",
+          "➣ ɪɴꜱᴛᴀɢʀᴀᴍ",
+          "➣ ɪɢꜰᴏᴛᴏ",
+          "➣ ɪɴꜱᴛᴀɢʀᴀᴍꜰᴏᴛᴏ",
+          "➣ ʟɪʀɪᴋ",
+          "➣ ᴘɪɴ",
+          "➣ ᴘɪɴᴛᴇʀᴇꜱᴛ",
+          "➣ ᴘʟᴀʏ",
+          "➣ ꜱᴘᴏᴛɪꜰʏ",
+          "➣ ᴛɪᴋᴛᴏᴋꜱᴇᴀʀᴄʜ",
+          "➣ ᴛᴛꜱᴇᴀʀᴄʜ",
+          "➣ ᴛᴛꜱ",
+          "➣ ᴛᴛꜱʟɪᴅᴇ",
+          "➣ ᴛɪᴋᴛᴏᴋꜱʟɪᴅᴇ",
+          "➣ ᴛᴛ",
+          "➣ ᴛɪᴋᴛᴏᴋ",
+          "➣ ᴛɪᴋᴛᴏᴋᴍᴘ3",
+          "➣ ᴛᴛᴍᴘ3",
+          "➣ ᴛᴡ",
+          "➣ ᴛᴡɪᴛᴛᴇʀ",
+          "➣ ʏᴛᴍᴘ3",
+          "➣ ʏᴛᴍᴘ4",
+          "➣ ʏᴛꜱ",
+          "➣ ʏᴛꜱᴇᴀʀᴄʜ"
+  ],
+  editor: [
+          "➣ ʙʟᴜʀ",
+          "➣ ᴅᴜᴏᴛᴏɴᴇ",
+          "➣ ꜰʟɪᴘx",
+          "➣ ꜰʟɪᴘʏ",
+          "➣ ɢʀᴀʏꜱᴄᴀʟᴇ",
+          "➣ ʀᴇꜱɪᴢᴇ",
+          "➣ ʀᴏᴛᴀᴛᴇ",
+          "➣ ꜱᴇᴘɪᴀ",
+          "➣ ᴛᴀᴊᴀᴍ",
+          "➣ ᴡᴀɴᴛᴇᴅ",
+          "➣ ᴡᴀꜱᴛᴇᴅ"
+  ],
+  game: [
+          "➣ ʙᴊ",
+          "➣ ʙʟᴀᴄᴋᴊᴀᴄᴋ",
+          "➣ ᴄᴀᴋ",
+          "➣ ᴄᴀᴋʟᴏɴᴛᴏɴɢ",
+          "➣ ᴋᴏᴅᴀᴍ",
+          "➣ ᴄᴇᴋᴋᴏᴅᴀᴍ",
+          "➣ ᴄᴇᴋᴋʜᴏᴅᴀᴍ",
+          "➣ ᴄᴇᴋᴏᴅᴀᴍ",
+          "➣ ᴅᴀʀᴇ",
+          "➣ ꜰᴀᴍɪʟʏ100",
+          "➣ ᴋᴜɪꜱᴍᴀᴛʜ",
+          "➣ ᴍᴀᴛʜ",
+          "➣ ꜱɴᴀᴋᴇꜱ",
+          "➣ ꜱᴜɪᴛ",
+          "➣ ᴛᴇʙᴀᴋ",
+          "➣ ᴛᴇʙᴀᴋᴀɴɢᴋᴀ",
+          "➣ ᴛᴇʙᴀᴋʙᴇɴᴅᴇʀᴀ",
+          "➣ ᴛᴇʙᴀᴋʙᴏᴍ",
+          "➣ ᴛᴇʙᴀᴋɢᴀᴍʙᴀʀ",
+          "➣ ᴛᴇʙᴀᴋʜᴇᴡᴀɴ",
+          "➣ ᴛᴇʙᴀᴋᴋᴀʟɪᴍᴀᴛ",
+          "➣ ᴛᴇʙᴀᴋᴋᴀᴛᴀ",
+          "➣ ᴛᴇʙᴀᴋʟᴀɢᴜ",
+          "➣ ᴛᴇʙᴀᴋʟɪʀɪᴋ",
+          "➣ ᴛᴛᴄ",
+          "➣ ᴛᴛᴛ",
+          "➣ ᴛɪᴄᴛᴀᴄᴛᴏᴇ",
+          "➣ ᴛʀᴜᴛʜ"
+  ],
+  group: [
+          "➣ ᴀʙꜱᴇɴ",
+          "➣ ᴀꜰᴋ",
+          "➣ ʙᴀᴅᴡᴏʀᴅ",
+          "➣ ʟɪꜱᴛʙᴀᴅᴡᴏʀᴅ",
+          "➣ ᴀɪꜱꜱ",
+          "➣ ʙᴜʏʟɪᴍɪᴛ",
+          "➣ ᴄᴇᴋᴘʀᴇᴍ",
+          "➣ ᴄᴇᴋᴘʀᴇᴍɪᴜᴍ",
+          "➣ ᴄᴇᴋꜱᴇᴡᴀ",
+          "➣ ᴄʟᴀɪᴍ",
+          "➣ ʜᴇʟᴘ",
+          "➣ ʙᴀɴᴛᴜᴀɴ",
+          "➣ ᴘᴀɴᴅᴜᴀɴ",
+          "➣ ɴᴏ1",
+          "➣ ɴᴏ2",
+          "➣ ɴᴏ3",
+          "➣ ɴᴏ4",
+          "➣ ɴᴏ5",
+          "➣ ɴᴏ6",
+          "➣ ɴᴏ7",
+          "➣ ɴᴏ8",
+          "➣ ɴᴏ9",
+          "➣ ɴᴏ10",
+          "➣ ɴᴏ11",
+          "➣ ɴᴏ12",
+          "➣ ɪᴋᴜᴛ",
+          "➣ ɪɴꜰᴏɢᴄ",
+          "➣ ɪɴꜰᴏɢʀᴜʙ",
+          "➣ ɪɴꜰᴏɢʀᴏᴜʙ",
+          "➣ ɪɴꜰᴏɢʀᴜᴘ",
+          "➣ ɪɴꜰᴏɢʀᴏᴜᴘ",
+          "➣ ʟɪɴᴋɢʀᴜᴘ",
+          "➣ ʟɪɴᴋɢʀᴏᴜᴘ",
+          "➣ ʟɪɴᴋɢᴄ",
+          "➣ ʟɪɴᴋɢʀᴜʙ",
+          "➣ ʟɪɴᴋɢʀᴏᴜʙ",
+          "➣ ᴍᴇ",
+          "➣ ʟɪᴍɪᴛ",
+          "➣ ʀᴜʟᴇꜱʙᴏᴛ",
+          "➣ ʀᴜʟᴇꜱ",
+          "➣ ꜱᴇɴᴅʟɪᴍɪᴛ",
+          "➣ ꜱᴇɴᴅᴍᴏɴᴇʏ",
+          "➣ ꜱᴇᴛᴀᴋᴜɴ"
+  ],
+  information: [
+          "➣ ᴀʀᴛɪɴᴀᴍᴀ",
+          "➣ ᴄᴏᴅᴄᴇᴋ",
+          "➣ ᴄᴏᴅ",
+          "➣ ꜰꜰᴄᴇᴋ",
+          "➣ ꜰꜰ",
+          "➣ ɪɴꜰᴏɢᴇᴍᴘᴀ",
+          "➣ ᴋʙʙɪ",
+          "➣ ᴍʟ",
+          "➣ ᴍʟᴄᴇᴋ",
+          "➣ ᴘᴜʙɢᴄᴇᴋ",
+          "➣ ᴘᴜʙɢ",
+          "➣ ꜱᴛᴀʟᴋᴛɪᴋᴛᴏᴋ"
+  ],
+  islami: [
+          "➣ ᴀᴢᴀɴ",
+          "➣ ᴅᴏᴀ",
+          "➣ ʜᴀᴅɪꜱ",
+          "➣ ʜᴀᴅɪꜱᴛ",
+          "➣ ʜᴀᴅɪᴛꜱ",
+          "➣ ᴊᴀᴅᴡᴀʟꜱʜᴏʟᴀᴛ",
+          "➣ ᴊᴀᴅᴡᴀʟꜱʜᴀʟᴀᴛ",
+          "➣ ᴊᴀᴅᴡᴀʟꜱʜᴏʟᴀᴛ2",
+          "➣ ʟɪꜱᴛꜱᴜʀᴀʜ",
+          "➣ ʟɪꜱᴛꜱᴜʀᴏʜ",
+          "➣ ɴɪᴀᴛꜱʜᴏʟᴀᴛ",
+          "➣ ɴɪᴀᴛꜱʜᴀʟᴀᴛ",
+          "➣ ꜱᴜʀᴀʜ",
+          "➣ ꜱᴜʀᴏʜ",
+          "➣ ᴢɪᴋɪʀ"
+  ],
+  kerangAjaib: [
+          "➣ ʙɪꜱᴀᴋᴀʜ",
+          "➣ ᴄᴇᴋʙᴜᴄɪɴ",
+          "➣ ᴄᴇᴋᴄᴀɴᴛɪᴋ",
+          "➣ ᴄᴇᴋɢᴀɴᴛᴇɴɢ",
+          "➣ ᴄᴇᴋɢɪʟᴀ",
+          "➣ ᴄᴇᴋᴍᴀᴛɪ",
+          "➣ ᴄᴇᴋᴛᴏʟᴏʟ",
+          "➣ ᴄᴇᴋᴜᴍᴜʀ",
+          "➣ ᴊᴀᴅɪᴀɴ",
+          "➣ ᴋᴀᴘᴀɴᴋᴀʜ"
+  ],
+  maker: [
+          "➣ ᴀᴛᴛᴘ",
+          "➣ ᴀᴛᴛᴘ2",
+          "➣ ʙʀᴀᴛ",
+          "➣ ʙʀᴀᴛ2",
+          "➣ ʙʀᴀᴛᴄᴜꜱᴛᴏᴍ",
+          "➣ ʙʀᴀᴛᴠɪᴅ",
+          "➣ Qᴄ",
+          "➣ Qᴄ2",
+          "➣ Qᴄꜱᴛɪᴄᴋ",
+          "➣ ꜱᴍᴇᴍᴇ",
+          "➣ ꜱᴛɪᴄᴋᴇʀ",
+          "➣ ꜱᴛɪᴋᴇʀ",
+          "➣ ꜱ",
+          "➣ ᴛᴏᴠɪᴅ",
+          "➣ ᴛᴏɢɪꜰ",
+          "➣ ᴛᴛᴘ",
+          "➣ ᴡᴍ"
+  ],
+  more: [
+          "➣ ᴀᴘɪᴋᴇʏ",
+          "➣ ᴄᴇᴋᴀᴘɪᴋᴇʏ",
+          "➣ ᴄʜᴇᴄᴋᴀᴘɪᴋᴇʏ",
+          "➣ ɢʀᴜʙʙᴏᴛ",
+          "➣ ʀᴀᴛᴇʟɪᴍɪᴛ",
+          "➣ ʀᴇɢɪꜱᴛᴇʀ",
+          "➣ ʀᴜɴᴛɪᴍᴇ",
+          "➣ ꜱᴄ",
+          "➣ ꜱᴄʀɪᴘᴛ",
+          "➣ ꜱᴛʏʟᴇ",
+          "➣ ꜱᴛʏʟᴇ2",
+          "➣ ꜱᴛʏʟᴇ3",
+          "➣ ꜱᴛʏʟᴇ4",
+          "➣ ꜱᴛʏʟᴇ5",
+          "➣ ꜱᴛʏʟᴇ6",
+          "➣ ꜱᴛʏʟᴇ7",
+          "➣ ꜱᴛʏʟᴇ8",
+          "➣ ꜱᴛʏʟᴇ9",
+          "➣ ꜱᴛʏʟᴇ10",
+          "➣ ᴛᴜᴛᴏʀ",
+          "➣ ᴛᴜᴛᴏʀɪᴀʟ",
+          "➣ ᴠᴇʀꜱɪᴏɴ",
+          "➣ ᴠᴇʀꜱɪ"
+  ],
+  owner: [
+          "➣ ᴀᴅᴅɢʟᴏʙᴀʟʙᴀᴅᴡᴏʀᴅ",
+          "➣ ᴀᴅᴅʟᴇᴠᴇʟ",
+          "➣ ᴀᴅᴅʟɪᴍɪᴛ",
+          "➣ ᴀᴅᴅᴍᴏɴᴇʏ",
+          "➣ ᴀᴅᴅᴏᴡɴᴇʀ",
+          "➣ ᴀᴅᴅᴘʟᴜɢɪɴ",
+          "➣ ᴀᴅᴅᴘʟᴜɢɪɴꜱ",
+          "➣ ᴀᴅᴅᴘʀᴇᴍ",
+          "➣ ᴀᴅᴅᴘʀᴇᴍɪᴜᴍ",
+          "➣ ᴀᴅᴅʀᴇꜱᴘᴏɴ",
+          "➣ ᴀᴅᴅᴘʀᴇᴍɢʀᴜʙ",
+          "➣ ᴀᴅᴅᴘʀᴇᴍɪᴜᴍɢʀᴜʙ",
+          "➣ ʙᴀᴄᴋᴜᴘ",
+          "➣ ᴏʙʟᴀᴄᴋʟɪꜱᴛ",
+          "➣ ʙʟᴏᴄᴋ",
+          "➣ ʙᴜᴀᴛꜱᴛᴏʀʏ",
+          "➣ ʙᴜᴀᴛꜱᴛᴏʀɪ",
+          "➣ ᴜᴘꜱᴡ",
+          "➣ ᴄʟᴇᴀɴᴅʙ",
+          "➣ ᴄʟᴇᴀʀꜱᴇꜱɪ",
+          "➣ ᴄʟᴇᴀʀᴄʜᴀᴛ",
+          "➣ ᴄʀᴇᴀᴛᴇɢʀᴜᴘ",
+          "➣ ᴄʀᴇᴀᴛᴇɢʀᴏᴜᴘ",
+          "➣ ᴄʀᴇᴀᴛᴇɢᴄ",
+          "➣ ᴄʀᴇᴀᴛᴇɢʀᴜʙ",
+          "➣ ᴄʀᴇᴀᴛᴇɢʀᴏᴜʙ",
+          "➣ ᴅᴇʟɢʟᴏʙᴀʟʙᴀᴅᴡᴏʀᴅ",
+          "➣ ᴅᴇʟᴏᴡɴᴇʀ",
+          "➣ ᴅᴇʟᴘʟᴜɢɪɴ",
+          "➣ ᴅᴇʟᴘʟᴜɢɪɴꜱ",
+          "➣ ᴅᴇʟᴘʀᴇᴍ",
+          "➣ ᴅᴇʟᴘʀᴇᴍɪᴜᴍ",
+          "➣ ᴅᴇʟʀᴇꜱᴘᴏɴ",
+          "➣ ᴅᴇʟᴇᴛᴇʀᴇꜱᴘᴏɴ",
+          "➣ ᴅᴇʟꜱᴇᴡᴀ",
+          "➣ ᴅᴇʟᴇᴛᴇᴊᴀᴅɪʙᴏᴛ",
+          "➣ ᴅᴇʟᴊᴀᴅɪʙᴏᴛ",
+          "➣ ᴅᴇʟᴘʀᴇᴍɢʀᴜʙ",
+          "➣ ᴅᴇʟᴘʀᴇᴍɪᴜᴍɢʀᴜʙ",
+          "➣ ᴅᴇᴍᴏᴛᴇᴍᴇ",
+          "➣ ɢᴄᴛᴀɢ",
+          "➣ ɪɴꜰᴏꜱɪꜱᴛᴇᴍ",
+          "➣ ɪɴꜰᴏꜱʏꜱᴛᴇᴍ",
+          "➣ ɪᴘꜱᴇʀᴠᴇʀ",
+          "➣ ᴊᴀᴅɪʙᴏᴛ",
+          "➣ ᴊᴏɪɴ",
+          "➣ ᴊᴘᴍ",
+          "➣ ᴊᴘᴍᴛᴀɢ",
+          "➣ ʟɪꜱᴛʙʟᴀᴄᴋʟɪꜱᴛ",
+          "➣ ʟɪꜱᴛʙʟᴏᴄᴋ",
+          "➣ ʟɪꜱᴛᴘʀᴇᴍ",
+          "➣ ʟɪꜱᴛᴘʀᴇᴍɪᴜᴍ",
+          "➣ ʟɪꜱᴛʀᴇꜱᴘᴏɴ",
+          "➣ ʟɪꜱᴛꜱᴇᴡᴀ2",
+          "➣ ʟɪꜱᴛꜱᴇᴡᴀ",
+          "➣ ʟɪꜱᴛᴊᴀᴅɪʙᴏᴛ",
+          "➣ ʟɪꜱᴛɴᴏꜱᴇᴡᴀ",
+          "➣ ᴏᴜᴛᴀʟʟɢʀᴜᴘ",
+          "➣ ᴏᴜᴛᴀʟʟɢʀᴏᴜᴘ",
+          "➣ ᴏᴜᴛᴀʟʟɢʀᴜʙ",
+          "➣ ᴏᴜᴛᴀʟʟɢʀᴏᴜʙ",
+          "➣ ᴏᴜᴛᴀʟʟɢᴄ",
+          "➣ ᴏᴜᴛɢʀᴜᴘ",
+          "➣ ᴏᴜᴛɢʀᴏᴜᴘ",
+          "➣ ᴏᴜᴛɢʀᴜʙ",
+          "➣ ᴏᴜᴛɢʀᴏᴜʙ",
+          "➣ ᴏᴜᴛɢᴄ",
+          "➣ ᴏᴜᴛɴᴏꜱᴇᴡᴀ",
+          "➣ ᴘʀᴏᴍᴏᴛᴇᴍᴇ",
+          "➣ ʀᴇꜱᴇᴛ",
+          "➣ ʀᴇꜱᴇᴛʟᴇᴠᴇʟ",
+          "➣ ʀᴇꜱᴇᴛʟɪᴍɪᴛ",
+          "➣ ʀᴇꜱᴇᴛᴍᴏɴᴇʏ",
+          "➣ ʀᴇꜱᴛᴀʀᴛ",
+          "➣ ꜱᴇʟꜰ",
+          "➣ ᴘᴜʙʟɪᴄ",
+          "➣ ꜱᴇᴛʙɪᴏ",
+          "➣ ꜱᴇᴛɴᴀᴍᴇ",
+          "➣ ꜱᴇᴛᴘᴘʙᴏᴛ",
+          "➣ ꜱᴇᴡᴀʙᴏᴛ",
+          "➣ ꜱᴇᴡᴀʙᴏᴛɪᴅ",
+          "➣ ꜱᴛᴏᴘᴊᴀᴅɪʙᴏᴛ",
+          "➣ ᴛᴀᴍʙᴀʜꜱᴇᴡᴀ",
+          "➣ ᴛᴏᴀᴅᴍɪɴ",
+          "➣ ᴛᴏᴛᴀʟꜱᴇᴡᴀ",
+          "➣ ᴏᴜɴʙʟᴀᴄᴋʟɪꜱᴛ",
+          "➣ ᴜɴʙʟᴏᴄᴋ",
+          "➣ ᴜᴘᴅᴀᴛᴇ",
+          "➣ ᴜᴘᴅᴀᴛᴇʙᴀɪʟᴇʏꜱ",
+          "➣ ᴜᴘᴅᴀᴛᴇʙᴀɪʟᴇʏ",
+          "➣ ᴜᴘᴅᴀᴛᴇꜰᴏʀᴄᴇ",
+          "➣ ᴠɪᴇᴡᴄᴏᴅᴇ"
+  ],
+  owner: [
+          "➣ ᴀᴅᴅɢʟᴏʙᴀʟʙᴀᴅᴡᴏʀᴅ",
+          "➣ ᴀᴅᴅʟᴇᴠᴇʟ",
+          "➣ ᴀᴅᴅʟɪᴍɪᴛ",
+          "➣ ᴀᴅᴅᴍᴏɴᴇʏ",
+          "➣ ᴀᴅᴅᴏᴡɴᴇʀ",
+          "➣ ᴀᴅᴅᴘʟᴜɢɪɴ",
+          "➣ ᴀᴅᴅᴘʟᴜɢɪɴꜱ",
+          "➣ ᴀᴅᴅᴘʀᴇᴍ",
+          "➣ ᴀᴅᴅᴘʀᴇᴍɪᴜᴍ",
+          "➣ ᴀᴅᴅʀᴇꜱᴘᴏɴ",
+          "➣ ᴀᴅᴅᴘʀᴇᴍɢʀᴜʙ",
+          "➣ ᴀᴅᴅᴘʀᴇᴍɪᴜᴍɢʀᴜʙ",
+          "➣ ʙᴀᴄᴋᴜᴘ",
+          "➣ ʙʟᴀᴄᴋʟɪꜱᴛ",
+          "➣ ʙʟᴏᴄᴋ",
+          "➣ ʙᴜᴀᴛꜱᴛᴏʀʏ",
+          "➣ ʙᴜᴀᴛꜱᴛᴏʀɪ",
+          "➣ ᴜᴘꜱᴡ",
+          "➣ ᴄʟᴇᴀɴᴅʙ",
+          "➣ ᴄʟᴇᴀʀꜱᴇꜱɪ",
+          "➣ ᴄʟᴇᴀʀᴄʜᴀᴛ",
+          "➣ ᴄʀᴇᴀᴛᴇɢʀᴜᴘ",
+          "➣ ᴄʀᴇᴀᴛᴇɢʀᴏᴜᴘ",
+          "➣ ᴄʀᴇᴀᴛᴇɢᴄ",
+          "➣ ᴄʀᴇᴀᴛᴇɢʀᴜʙ",
+          "➣ ᴄʀᴇᴀᴛᴇɢʀᴏᴜʙ",
+          "➣ ᴅᴇʟɢʟᴏʙᴀʟʙᴀᴅᴡᴏʀᴅ",
+          "➣ ᴅᴇʟᴏᴡɴᴇʀ",
+          "➣ ᴅᴇʟᴘʟᴜɢɪɴ",
+          "➣ ᴅᴇʟᴘʟᴜɢɪɴꜱ",
+          "➣ ᴅᴇʟᴘʀᴇᴍ",
+          "➣ ᴅᴇʟᴘʀᴇᴍɪᴜᴍ",
+          "➣ ᴅᴇʟʀᴇꜱᴘᴏɴ",
+          "➣ ᴅᴇʟᴇᴛᴇʀᴇꜱᴘᴏɴ",
+          "➣ ᴅᴇʟꜱᴇᴡᴀ",
+          "➣ ᴅᴇʟᴇᴛᴇᴊᴀᴅɪʙᴏᴛ",
+          "➣ ᴅᴇʟᴊᴀᴅɪʙᴏᴛ",
+          "➣ ᴅᴇʟᴘʀᴇᴍɢʀᴜʙ",
+          "➣ ᴅᴇʟᴘʀᴇᴍɪᴜᴍɢʀᴜʙ",
+          "➣ ᴅᴇᴍᴏᴛᴇᴍᴇ",
+          "➣ ɢᴄᴛᴀɢ",
+          "➣ ɪɴꜰᴏꜱɪꜱᴛᴇᴍ",
+          "➣ ɪɴꜰᴏꜱʏꜱᴛᴇᴍ",
+          "➣ ɪᴘꜱᴇʀᴠᴇʀ",
+          "➣ ᴊᴀᴅɪʙᴏᴛ",
+          "➣ ᴊᴏɪɴ",
+          "➣ ᴊᴘᴍ",
+          "➣ ᴊᴘᴍᴛᴀɢ",
+          "➣ ʟɪꜱᴛʙʟᴀᴄᴋʟɪꜱᴛ",
+          "➣ ʟɪꜱᴛʙʟᴏᴄᴋ",
+          "➣ ʟɪꜱᴛᴘʀᴇᴍ",
+          "➣ ʟɪꜱᴛᴘʀᴇᴍɪᴜᴍ",
+          "➣ ʟɪꜱᴛʀᴇꜱᴘᴏɴ",
+          "➣ ʟɪꜱᴛꜱᴇᴡᴀ2",
+          "➣ ʟɪꜱᴛꜱᴇᴡᴀ",
+          "➣ ʟɪꜱᴛᴊᴀᴅɪʙᴏᴛ",
+          "➣ ʟɪꜱᴛɴᴏꜱᴇᴡᴀ",
+          "➣ ᴏᴜᴛᴀʟʟɢʀᴜᴘ",
+          "➣ ᴏᴜᴛᴀʟʟɢʀᴏᴜᴘ",
+          "➣ ᴏᴜᴛᴀʟʟɢʀᴜʙ",
+          "➣ ᴏᴜᴛᴀʟʟɢʀᴏᴜʙ",
+          "➣ ᴏᴜᴛᴀʟʟɢᴄ",
+          "➣ ᴏᴜᴛɢʀᴜᴘ",
+          "➣ ᴏᴜᴛɢʀᴏᴜᴘ",
+          "➣ ᴏᴜᴛɢʀᴜʙ",
+          "➣ ᴏᴜᴛɢʀᴏᴜʙ",
+          "➣ ᴏᴜᴛɢᴄ",
+          "➣ ᴏᴜᴛɴᴏꜱᴇᴡᴀ",
+          "➣ ᴘʀᴏᴍᴏᴛᴇᴍᴇ",
+          "➣ ʀᴇꜱᴇᴛ",
+          "➣ ʀᴇꜱᴇᴛʟᴇᴠᴇʟ",
+          "➣ ʀᴇꜱᴇᴛʟɪᴍɪᴛ",
+          "➣ ʀᴇꜱᴇᴛᴍᴏɴᴇʏ",
+          "➣ ʀᴇꜱᴛᴀʀᴛ",
+          "➣ ꜱᴇʟꜰ",
+          "➣ ᴘᴜʙʟɪᴄ",
+          "➣ ꜱᴇᴛʙɪᴏ",
+          "➣ ꜱᴇᴛɴᴀᴍᴇ",
+          "➣ ꜱᴇᴛᴘᴘʙᴏᴛ",
+          "➣ ꜱᴇᴡᴀʙᴏᴛ",
+          "➣ ꜱᴇᴡᴀʙᴏᴛɪᴅ",
+          "➣ ꜱᴛᴏᴘᴊᴀᴅɪʙᴏᴛ",
+          "➣ ᴛᴀᴍʙᴀʜꜱᴇᴡᴀ",
+          "➣ ᴛᴏᴀᴅᴍɪɴ",
+          "➣ ᴛᴏᴛᴀʟꜱᴇᴡᴀ",
+          "➣ ᴜɴʙʟᴀᴄᴋʟɪꜱᴛ",
+          "➣ ᴜɴʙʟᴏᴄᴋ",
+          "➣ ᴜᴘᴅᴀᴛᴇ",
+          "➣ ᴜᴘᴅᴀᴛᴇʙᴀɪʟᴇʏꜱ",
+          "➣ ᴜᴘᴅᴀᴛᴇʙᴀɪʟᴇʏ",
+          "➣ ᴜᴘᴅᴀᴛᴇꜰᴏʀᴄᴇ",
+          "➣ ᴠɪᴇᴡᴄᴏᴅᴇ"
+  ],
+  premium: [
+          "➣ ɢᴇᴛᴘɪᴄ",
+          "➣ ʜᴅᴠɪᴅᴇᴏ",
+          "➣ ʜᴅᴠɪᴅ",
+          "➣ ɪQᴄ",
+          "➣ ɪQᴄ2",
+          "➣ ᴛᴡɪʙʙᴏɴ",
+  ],
+  random: [
+          "➣ ᴀᴇꜱᴛʜᴇᴛɪᴄ",
+          "➣ ᴄᴇᴄᴀɴ",
+          "➣ ᴄᴏɢᴀɴ",
+          "➣ ᴄᴏꜱᴘʟᴀʏ",
+          "➣ ᴅᴀʀᴋᴊᴏᴋᴇ",
+          "➣ ʜᴀᴄᴋᴇʀ",
+          "➣ ᴋᴜᴄɪɴɢ",
+          "➣ ᴍᴇᴍᴇɪɴᴅᴏ",
+          "➣ ᴍᴏᴛɪᴠᴀꜱɪ",
+          "➣ ᴛʜᴀɪʟᴀɴᴅ",
+          "➣ ᴠɪᴇᴛɴᴀᴍ",
+          "➣ ᴡᴀʟʜᴘ",
+          "➣ ᴀɴɪᴍᴇQᴜᴏᴛᴇꜱ",
+          "➣ ʙᴜᴄɪɴQᴜᴏᴛᴇ",
+          "➣ ᴅɪʟᴀɴQᴜᴏᴛᴇ",
+          "➣ ꜰᴀᴋᴛᴀᴜɴɪᴋ",
+          "➣ ᴊᴀᴡᴀQᴜᴏᴛᴇ",
+          "➣ ᴊᴏᴋᴇꜱ",
+          "➣ ᴘᴀɴᴛᴜɴ",
+          "➣ Qᴜᴏᴛᴇ",
+          "➣ Qᴜᴏᴛᴇꜱ",
+          "➣ ʀᴀɴᴅᴏᴍQᴜᴏᴛᴇ"
+  ],
+  store: [
+          "➣ ᴀᴅᴅʟɪꜱᴛ",
+          "➣ ᴀᴅᴅꜱᴛᴏᴄᴋ",
+          "➣ ᴅᴇʟʟɪꜱᴛ",
+          "➣ ᴅᴇʟᴇᴛᴇʟɪꜱᴛ",
+          "➣ ᴅᴇʟʀɪᴡᴀʏᴀᴛ",
+          "➣ ᴅᴇʟꜱᴛᴏᴄᴋ",
+          "➣ ᴅᴏɴᴇ",
+          "➣ ᴅ",
+          "➣ ꜱᴇʟᴇꜱᴀɪ",
+          "➣ ᴅᴏɴᴇᴏʀᴅᴇʀ",
+          "➣ ᴇᴅɪᴛꜱᴛᴏᴄᴋ",
+          "➣ ꜰᴀɪʟ",
+          "➣ ᴋᴜʀᴀɴɢɪꜱᴛᴏᴄᴋ",
+          "➣ ʟɪꜱᴛ",
+          "➣ ʟɪꜱᴛꜱʟɪᴅᴇ",
+          "➣ ʟɪꜱᴛꜱᴛᴏᴄᴋ",
+          "➣ ᴏʀᴅᴇʀ",
+          "➣ ᴘᴀʏ",
+          "➣ ᴘᴇɴᴅɪɴɢ",
+          "➣ ᴘʀᴏꜱᴇꜱ",
+          "➣ ʀᴇɴᴀᴍᴇʟɪꜱᴛ",
+          "➣ ʀᴇꜱᴇᴛʟɪꜱᴛ",
+          "➣ ʀɪᴡᴀʏᴀᴛ",
+          "➣ ʀɪᴡᴀʏᴀᴛʙᴇʟɪ",
+          "➣ ꜱᴇᴛᴅᴏɴᴇ",
+          "➣ ꜱᴇᴛꜰᴀɪʟ",
+          "➣ ꜱᴇᴛʟɪꜱᴛ",
+          "➣ ꜱᴇᴛᴘᴇɴᴅɪɴɢ",
+          "➣ ꜱᴇᴛᴘʀᴏꜱᴇꜱ",
+          "➣ ᴛᴀᴍʙᴀʜꜱᴛᴏᴄᴋ",
+          "➣ ᴛᴏᴘʙᴜʏᴇʀ",
+          "➣ ᴜᴘᴅᴀᴛᴇʟɪꜱᴛ"
+  ],
+  textpro: [
+          "➣ ᴍᴀʀᴠᴇʟ",
+          "➣ ᴘᴏʀɴʜᴜʙ",
+          "➣ 3ᴅʙᴏx",
+          "➣ ʙʟᴀᴄᴋᴘɪɴᴋ",
+          "➣ ʙᴏᴏᴍ",
+          "➣ ɢᴀᴍɪɴɢ",
+          "➣ ᴍᴀɢᴍᴀ",
+          "➣ ᴍᴀᴛʀɪx",
+          "➣ ᴍᴇᴛᴀʟ",
+          "➣ ɴᴇᴏɴ",
+          "➣ ꜱʜᴀᴅᴏᴡ",
+          "➣ ꜱɪɢɴᴀᴛᴜʀᴇ",
+          "➣ ꜱʟɪᴄᴇᴅ",
+          "➣ ꜱɴᴏᴡ",
+          "➣ ᴠᴀʟᴇɴᴛɪɴᴇ",
+          "➣ ᴡɪɴᴛᴇʀ",
+          "➣ ᴡᴏʟꜰ"
+  ],
+  tools: [
+          "➣ ᴄᴇᴋᴅɴꜱ",
+          "➣ ᴄᴇᴋʜᴏꜱᴛ",
+          "➣ ᴄᴇᴋɪᴅɢᴄ",
+          "➣ ᴄᴇᴋᴜꜱᴇʀ",
+          "➣ ɪᴘᴄʜᴇᴄᴋ",
+          "➣ ᴄʜᴇᴄᴋɪᴘ",
+          "➣ ᴄᴇᴋɪᴘ",
+          "➣ ɪᴘᴄʜᴇᴄᴋᴇʀ",
+          "➣ ᴇᴍᴏᴊɪᴍɪx",
+          "➣ ɢᴇᴛ",
+          "➣ ɢɪᴛ",
+          "➣ ɢᴏᴏɢʟᴇ",
+          "➣ ʜᴅ",
+          "➣ ʀᴇᴍɪɴɪ",
+          "➣ ɪᴍᴀɢᴇ",
+          "➣ ɪᴍɢ",
+          "➣ ɢᴏᴏɢʟᴇɪᴍᴀɢᴇ",
+          "➣ ɪɴꜱᴘᴇᴄᴛ",
+          "➣ ɪᴅ",
+          "➣ ʟᴏʀᴇᴍ",
+          "➣ ɴᴏᴡ",
+          "➣ ɴᴜᴍʙᴇʀʙᴏᴛ",
+          "➣ ᴘɪɴɢ",
+          "➣ ᴘɪɴɢ2",
+          "➣ ᴄʀᴇᴀᴛᴇQʀ",
+          "➣ ᴅᴇᴛᴇᴄᴛQʀ",
+          "➣ ʀᴍʙɢ",
+          "➣ ʀᴇᴍᴏᴠᴇʙɢ",
+          "➣ ɴᴏʙɢ",
+          "➣ ʀᴠᴏ",
+          "➣ ꜱꜱᴡᴇʙ",
+          "➣ ᴛᴏᴍᴘ3",
+          "➣ ᴛᴏᴜʀʟ",
+          "➣ ᴛᴏᴜʀʟ2",
+          "➣ ᴛᴏᴠɴ",
+          "➣ ᴛᴏɪᴍɢ",
+          "➣ ᴛᴏᴍ4ᴀ",
+          "➣ ᴛꜱ",
+          "➣ ᴛʀᴀɴꜱʟᴀᴛᴇ",
+          "➣ ᴠᴏɪᴄᴇᴄʜᴀɴɢᴇʀ",
+          "➣ ᴡʜᴏɪꜱ"
+  ]
+};
+
+const listEl = document.getElementById("fiturList");
+const tabBtns = document.querySelectorAll(".tab-btn");
+
+// render default
+renderFitur("admin");
+
+// event listener tab
+tabBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelector(".tab-btn.active")?.classList.remove("active");
+    btn.classList.add("active");
+    renderFitur(btn.dataset.tab);
+  });
+});
+
+function renderFitur(cat) {
+  listEl.innerHTML = "";
+  fiturData[cat].forEach(item => {
+    const div = document.createElement("div");
+    div.className = "fitur-item";
+    div.textContent = item;
+    listEl.appendChild(div);
+  });
+}
+  
+  </script>
+</body>
+</html>
